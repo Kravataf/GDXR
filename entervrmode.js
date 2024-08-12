@@ -1,4 +1,7 @@
-const lib = require('https://cdn.jsdelivr.net/npm/webxr-polyfill@1.2.0/build/webxr-polyfill.min.js')
+const script = document.createElement('script');
+script.src = 'https://cdn.jsdelivr.net/npm/webxr-polyfill@1.2.0/build/webxr-polyfill.min.js';
+document.head.appendChild(script);
+
 //webXR lib
 
 //get xr sesh
