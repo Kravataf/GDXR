@@ -11,3 +11,5 @@ async function enterVRMode() {
 }
 
 enterVRMode(); //call func to start vr mode
+
+const canvas = document.getElementById('canvas id here?'); //define canvas or smth
