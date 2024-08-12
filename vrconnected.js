@@ -12,5 +12,5 @@ if (navigator.xr) {
         }
     });
 } else {
-    console.log("WebXR is not supported in this browser.");
+    console.log("WebXR not supported");
 }
