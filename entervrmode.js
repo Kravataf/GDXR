@@ -1,5 +1,5 @@
 const lib = require('https://cdn.jsdelivr.net/npm/webxr-polyfill@1.2.0/build/webxr-polyfill.min.js')
-//webXR api
+//webXR lib
 
 //get xr sesh
 const session = await navigator.xr.requestSession('immersive-vr');
