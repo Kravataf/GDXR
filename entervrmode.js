@@ -1,7 +1,7 @@
 const script = document.createElement('script');
 script.src = 'https://cdn.jsdelivr.net/npm/webxr-polyfill@1.2.0/build/webxr-polyfill.min.js';
 script.onload = async function() {
-    const canvas = document.getElementById('your-canvas-id');
+    const canvas = document.getElementById('vrCanvas');
     
     if (navigator.xr) {
         try {
