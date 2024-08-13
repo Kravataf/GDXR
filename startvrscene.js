@@ -68,3 +68,4 @@ async function createScene() {
 }
 
 //this actually renders something
+//still has ton of bugs..
