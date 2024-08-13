@@ -1,2 +1,4 @@
 # GDXR
-doesnt work yet
+work in progress
+
+custom libs: babylon.js and webXR i guess
