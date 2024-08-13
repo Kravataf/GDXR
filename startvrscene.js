@@ -21,13 +21,14 @@ Promise.all([
     console.error('Error loading Babylon.js:', error);
 });
 
-
 // Define createScene function
-//error here vvvvvvvvvvvvvv (canvas)
 async function createScene() {
-    const canvas = document.querySelector('canvas[data-engine="three.js r160"]');  // Adjust selector as needed
+    // Use a more general selector or inspect the canvas manually
+    const canvas = document.querySelector('canvas') || document.getElementsByTagName('canvas')[0];
+    
     if (!canvas) {
         console.error('Canvas element not found');
+        console.log('All canvas elements:', document.querySelectorAll('canvas'));
         return;
     }
     
@@ -69,5 +70,4 @@ async function createScene() {
     });
 }
 
-//this actually renders something
-//still has ton of bugs..
+//this actually renders the ball >:3
