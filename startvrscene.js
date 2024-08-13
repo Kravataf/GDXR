@@ -22,6 +22,7 @@ Promise.all([
 });
 
 // Define createScene function
+//error here vvvvvvvvvvvvvv (canvas)
 async function createScene() {
     const canvas = document.querySelector('canvas[data-engine="three.js r160"]');  // Adjust selector as needed
     if (!canvas) {
