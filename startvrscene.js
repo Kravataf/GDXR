@@ -21,8 +21,6 @@ Promise.all([
     console.error('Error loading Babylon.js:', error);
 });
 
-const canvas = document.querySelector('canvas'); // Replace with the correct selector if needed
-const engine = new BABYLON.Engine(canvas, true);
 
 // Define createScene function
 //error here vvvvvvvvvvvvvv (canvas)
