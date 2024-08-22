@@ -8,22 +8,20 @@ function loadScript(url) {
     });
 }
 
-// Load the core Babylon.js library
+//load babylon.js
 Promise.all([
     loadScript('https://cdn.babylonjs.com/babylon.js')
 ])
 .then(() => {
     console.log("Babylon.js loaded");
-    // Now that Babylon.js is loaded, define and call createScene
-    createScene();  // Ensure createScene is defined in the same scope or globally
+    createScene();
 })
 .catch(error => {
     console.error('Error loading Babylon.js:', error);
 });
 
-// Define createScene function
+//define createScene function
 async function createScene() {
-    // Use a more general selector or inspect the canvas manually
     const canvas = document.querySelector('canvas') || document.getElementsByTagName('canvas')[0];
     
     if (!canvas) {
@@ -34,7 +32,7 @@ async function createScene() {
     
     const engine = new BABYLON.Engine(canvas, true);
 
-    // Create a basic scene
+    //create a basic scene
     const scene = new BABYLON.Scene(engine);
     const camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), scene);
     camera.setTarget(BABYLON.Vector3.Zero());
@@ -48,12 +46,12 @@ async function createScene() {
 
     const env = scene.createDefaultEnvironment();
 
-    // Initialize WebXR
+    //initialize WebXR
     const xr = await scene.createDefaultXRExperienceAsync({
         floorMeshes: [env.ground]
     });
 
-    // Start the render loop
+    //start the render loop
     engine.runRenderLoop(() => {
         scene.render();
     });
@@ -62,7 +60,7 @@ async function createScene() {
         engine.resize();
     });
 
-    // Enter VR mode
+    //enter VR mode!!
     xr.baseExperience.enterXRAsync('immersive-vr', 'local').then(() => {
         console.log('VR mode started');
     }).catch(error => {
