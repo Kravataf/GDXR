@@ -8,6 +8,10 @@ function loadScript(url) {
     });
 }
 
+//get browser info (chrome)
+var userAgent = navigator.userAgent; 
+console.log(userAgent);
+
 //load babylon.js
 Promise.all([
     loadScript('https://cdn.babylonjs.com/babylon.js')
