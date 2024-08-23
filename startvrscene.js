@@ -62,6 +62,7 @@ async function createScene() {
 
     //check if space pressed
     document.addEventListener('keyup', event => {
+        console.log('spacebar pressed')
         if (event.code === 'Space') {
             //enter VR mode!!
             xr.baseExperience.enterXRAsync('immersive-vr', 'local').then(() => {
