@@ -60,12 +60,17 @@ async function createScene() {
         engine.resize();
     });
 
-    //enter VR mode!!
-    xr.baseExperience.enterXRAsync('immersive-vr', 'local').then(() => {
-        console.log('VR mode started');
-    }).catch(error => {
-        console.error('Failed to enter VR mode:', error);
-    });
+    //check if space pressed
+    document.addEventListener('keyup', event => {
+        if (event.code === 'Space') {
+            //enter VR mode!!
+            xr.baseExperience.enterXRAsync('immersive-vr', 'local').then(() => {
+                console.log('VR mode started');
+            }).catch(error => {
+                console.error('Failed to enter VR mode:', error);
+            });
+        }
+    })
 }
 
 //this actually renders the ball >:3
