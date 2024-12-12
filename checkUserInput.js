@@ -1,7 +1,8 @@
+var userInteracted = runtimeScene.getVariables().get("userInteracted");
 async function userInteractionCondition(runtimeScene) {
     //call waitForUserInput and pause execution until resolved
     await waitForUserInput();
-    runtimeScene.getVariables().get("userInteracted").setNumber(1); //set scene var to indicate interaction
+    userInteracted = 1; //set scene var to indicate interaction
 }
 function waitForUserEvent(eventType = "click") {
     return new Promise((resolve) => {
