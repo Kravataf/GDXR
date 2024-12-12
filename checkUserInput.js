@@ -1,15 +1,10 @@
-var userInteracted = runtimeScene.getVariables().get("userInteracted");
-async function userInteractionCondition(runtimeScene) {
-    //call waitForUserInput and pause execution until resolved
-    await waitForUserInput();
-    userInteracted = 1; //set scene var to indicate interaction
-}
-function waitForUserEvent(eventType = "click") {
-    return new Promise((resolve) => {
-        const listener = () => {
-            resolve();
-            window.removeEventListener(eventType, listener);
-        };
-        window.addEventListener(eventType, listener);
-    });
-}
+//attach the startXRSession function to a user interaction event!!
+const startButton = document.createElement('button');
+startButton.textContent = 'Start XR Session';
+startButton.style.position = 'absolute';
+startButton.style.top = '10px';
+startButton.style.left = '10px';
+startButton.addEventListener('click', () => {
+    startXRSession();
+});
+document.body.appendChild(startButton);
