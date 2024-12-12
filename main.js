@@ -20,3 +20,9 @@ startButton.addEventListener('click', () => {
     startXRSession();
 });
 document.body.appendChild(startButton);
+//webxr doesnt work bc of insecure connection or whatever
+if (!location.protocol.includes('https')) {
+    alert(
+      "ur connection is not secure and WebXR wont work!! please enable the 'Insecure origins treated as secure' flag in Chrome (chrome://flags)."
+    );
+  }
