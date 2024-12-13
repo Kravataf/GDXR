@@ -8,6 +8,7 @@
 // document.head.appendChild(loadTHREEJS);
 
 // import { VRButton } from 'three/addons/webxr/VRButton.js';
+gdjs.__WithThreeJS.set("BuiltIn3D", (runtimeScene.getRenderer()._threeRenderer ? false : true)); //this should enable threejs if false
 async function startXRSession() {
     if (navigator.xr) {
         try {
