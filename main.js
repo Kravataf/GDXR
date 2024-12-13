@@ -2,18 +2,7 @@
 // it since gdev already has threejs so im not sure if its a good idea to import it again..
 // import * as THREE from 'https://cdn.jsdelivr.net/npm/three.js@0.77.1/shim.min.js'; //i  hope this works
 
-async function importThreeJS(url) {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`failed to fetch: ${response.statusText}`);
-        }
-        const scriptContent = await response.text();
-        const execute = new Function(scriptContent);
-        execute();
-    } catch (error) {}
-}
-importThreeJS('https://cdn.jsdelivr.net/npm/three.js@0.77.1/shim.min.js');
+altImport('https://cdn.jsdelivr.net/npm/three@0.77.1/build/three.min.js', function() {});
 
 import { VRButton } from 'three/addons/webxr/VRButton.js';
 
