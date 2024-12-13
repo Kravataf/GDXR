@@ -26,3 +26,6 @@ if (!location.protocol.includes('https')) {
       "ur connection is not secure and WebXR wont work!! please enable the 'Insecure origins treated as secure' flag in Chrome (chrome://flags)."
     );
   }
+
+//access scene renderer
+const renderer = runtimeScene.getRenderer();
