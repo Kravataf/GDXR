@@ -3,11 +3,11 @@
 // import * as THREE from 'https://cdn.jsdelivr.net/npm/three.js@0.77.1/shim.min.js'; //i  hope this works
 // loadTHREEJS('https://cdn.jsdelivr.net/npm/three@0.77.1/build/three.min.js', function() {});
 
-const loadTHREEJS = document.createElement("script");
-loadTHREEJS.src = "https://cdn.jsdelivr.net/npm/three@0.77.1/build/three.min.js";
-document.head.appendChild(loadTHREEJS);
+// const loadTHREEJS = document.createElement("script");
+// loadTHREEJS.src = "https://cdn.jsdelivr.net/npm/three@0.77.1/build/three.min.js";
+// document.head.appendChild(loadTHREEJS);
 
-import { VRButton } from 'three/addons/webxr/VRButton.js';
+// import { VRButton } from 'three/addons/webxr/VRButton.js';
 async function startXRSession() {
     if (navigator.xr) {
         try {
@@ -21,11 +21,11 @@ async function startXRSession() {
         console.log('not supported');
     }
 }
-renderer.setAnimationLoop( function () {
+// renderer.setAnimationLoop( function () {
 
-	renderer.render( scene, camera );
+// 	renderer.render( scene, camera );
 
-} );
+// } );
 //attach the startXRSession function to a user interaction event!!
 // const startButton = document.createElement('button');
 // startButton.textContent = 'Start XR Session';
