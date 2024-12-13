@@ -15,6 +15,11 @@ async function startXRSession() {
         console.log('not supported');
     }
 }
+renderer.setAnimationLoop( function () {
+
+	renderer.render( scene, camera );
+
+} );
 //attach the startXRSession function to a user interaction event!!
 // const startButton = document.createElement('button');
 // startButton.textContent = 'Start XR Session';
@@ -24,7 +29,10 @@ async function startXRSession() {
 // startButton.addEventListener('click', () => {
 //     startXRSession();
 // });
-document.body.appendChild(startButton);
+// document.body.appendChild(startButton);
+
+document.body.appendChild( VRButton.createButton( renderer ) ); //button from the docs https://threejs.org/docs/#manual/en/introduction/How-to-create-VR-content
+
 //webxr doesnt work bc of insecure connection or whatever
 if (!location.protocol.includes('https')) {
     alert(
