@@ -8,6 +8,12 @@ async function startXRSession() {
             renderer.xr.enabled = true;
             renderer.xr.setCamera(xrCamera);
             await renderer.xr.setSession(session);
+
+            renderer.setAnimationLoop( function () {
+
+                renderer.render( scene, camera );
+            
+            } ); //we need a diff anim loop for rendering in vr
         } catch (err) {
             console.error('failed to start:', err);
         }
@@ -15,11 +21,6 @@ async function startXRSession() {
         console.log('not supported');
     }
 }
-// renderer.setAnimationLoop( function () {
-
-// 	renderer.render( scene, camera );
-
-// } );
 //attach the startXRSession function to a user interaction event!!
 const startButton = document.createElement('button');
 startButton.textContent = 'Start XR Session';
