@@ -1,3 +1,6 @@
+//import some stuff
+// import { VRButton } from 'three/addons/webxr/VRButton.js';
+
 async function startXRSession() {
     if (navigator.xr) {
         try {
@@ -27,4 +30,3 @@ if (!location.protocol.includes('https')) {
     );
   }
 //ako mam zmenit nech gd pouziva xr cameru??
-const renderer = runtimeScene.getRenderer();
