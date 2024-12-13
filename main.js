@@ -7,6 +7,7 @@ async function startXRSession() {
             console.log('webxr session started:', session);
             renderer.xr.enabled = true;
             renderer.xr.setCamera(xrCamera);
+            await renderer.xr.setSession(session);
         } catch (err) {
             console.error('failed to start:', err);
         }
