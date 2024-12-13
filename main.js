@@ -6,6 +6,7 @@ async function startXRSession() {
             const session = await navigator.xr.requestSession('immersive-vr');
             console.log('webxr session started:', session);
             renderer.xr.enabled = true;
+            renderer.xr.setCamera(xrCamera);
         } catch (err) {
             console.error('failed to start:', err);
         }
@@ -27,7 +28,7 @@ startButton.style.left = '10px';
 startButton.addEventListener('click', () => {
     startXRSession();
 });
-document.body.appendChild(startButton);
+document.body.appendChild(startButton); //shit button because i didnt manage to import the VRbutton thingy yet
 
 // document.body.appendChild( VRButton.createButton( renderer ) ); //button from the docs https://threejs.org/docs/#manual/en/introduction/How-to-create-VR-content
 
