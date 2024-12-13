@@ -1,5 +1,5 @@
-//import some stuff
-// import { VRButton } from 'three/addons/webxr/VRButton.js';
+//import some stuff       vvvvvv wont work probably
+import { VRButton } from 'three/addons/webxr/VRButton.js';
 
 async function startXRSession() {
     if (navigator.xr) {
