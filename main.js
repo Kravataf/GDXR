@@ -1,5 +1,6 @@
 //import some stuff importing it like this wont work but idk how to do 
 // it since gdev already has threejs so im not sure if its a good idea to import it again..
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three.js@0.77.1/shim.min.js'; //i  hope this works
 import { VRButton } from 'three/addons/webxr/VRButton.js';
 
 async function startXRSession() {
