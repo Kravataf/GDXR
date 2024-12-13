@@ -15,11 +15,11 @@ async function startXRSession() {
         console.log('not supported');
     }
 }
-renderer.setAnimationLoop( function () {
+// renderer.setAnimationLoop( function () {
 
-	renderer.render( scene, camera );
+// 	renderer.render( scene, camera );
 
-} );
+// } );
 //attach the startXRSession function to a user interaction event!!
 const startButton = document.createElement('button');
 startButton.textContent = 'Start XR Session';
