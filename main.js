@@ -2,11 +2,7 @@
 // it since gdev already has threejs so im not sure if its a good idea to import it again..
 // import * as THREE from 'https://cdn.jsdelivr.net/npm/three.js@0.77.1/shim.min.js'; //i  hope this works
 
-loadExternalScript('https://cdn.jsdelivr.net/npm/three@0.77.1/build/three.min.js', function() {
-    console.log('three.js loaded!');
-    // Initialize WebXR or other features here after loading the script
-    startXR();
-});
+loadTHREEJS('https://cdn.jsdelivr.net/npm/three@0.77.1/build/three.min.js', function() {});
 
 
 import { VRButton } from 'three/addons/webxr/VRButton.js';
