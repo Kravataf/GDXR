@@ -6,8 +6,6 @@ async function startXRSession() {
             const session = await navigator.xr.requestSession('immersive-vr');
             console.log('webxr session started:', session);
             renderer.xr.enabled = true;
-            const gl = this.app.graphicsDevice.gl;
-            await gl.makeXRCompatible(); //vraj sa ma toto nastavit nech neni crash
             renderer.xr.setCamera(xrCamera);
             await renderer.xr.setSession(session);
 
