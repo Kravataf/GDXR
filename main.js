@@ -27,5 +27,36 @@ if (!location.protocol.includes('https')) {
     );
   }
 
-//access scene renderer
-const renderer = runtimeScene.getRenderer();
+// Function to access the scene renderer and set up XR
+function setupXR(session) {
+    // Access the renderer of the runtime scene
+    const renderer = runtimeScene.getRenderer();
+
+    // Ensure it supports Three.js
+    const threeRenderer = renderer.getThreeRenderer ? renderer.getThreeRenderer() : null;
+
+    if (!threeRenderer) {
+        console.error("Three.js renderer not found. Ensure you're using GDevelop's 3D renderer.");
+        return;
+    }
+
+    // Set the renderer to use the WebXR session
+    threeRenderer.xr.enabled = true;
+    threeRenderer.xr.setSession(session);
+
+    // Access the default Three.js camera from the scene
+    const camera = runtimeScene.getCamera ? runtimeScene.getCamera() : null;
+
+    if (!camera) {
+        console.error("Camera not found in the scene.");
+        return;
+    }
+
+    // Update the camera to XR
+    threeRenderer.setAnimationLoop(() => {
+        // Render your scene using the camera and XR renderer
+        threeRenderer.render(runtimeScene.getThreeScene(), camera);
+    });
+
+    console.log("XR camera and renderer successfully initialized.");
+}
