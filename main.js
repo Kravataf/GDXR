@@ -2,6 +2,7 @@ async function startXRSession() {
     if (navigator.xr) {
         try {
             const session = await navigator.xr.requestSession('immersive-vr');
+            const runtimeScene = runtimeScene //for whatever reason its throwing error that runtimeScene not defined?
             const renderer = runtimeScene.getGame().getRenderer(); //this should get the renderer of gd
             console.log(renderer)
             console.log('webxr session started:', session);
@@ -37,4 +38,4 @@ if (!location.protocol.includes('https')) {
     alert(
       "ur connection is not secure and WebXR wont work!! please enable the 'Insecure origins treated as secure' flag in Chrome (chrome://flags)."
     );
-  }
+  } 
