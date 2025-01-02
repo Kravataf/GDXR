@@ -2,6 +2,7 @@ async function startXRSession() {
     if (navigator.xr) {
         try {
             const session = await navigator.xr.requestSession('immersive-vr');
+            const renderer = runtimeScene.getRenderer
             console.log('webxr session started:', session);
             renderer.xr.enabled = true;
             renderer.xr.setCamera(xrCamera);
