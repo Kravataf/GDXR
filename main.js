@@ -2,7 +2,8 @@ async function startXRSession() {
     if (navigator.xr) {
         try {
             const session = await navigator.xr.requestSession('immersive-vr');
-            const renderer = runtimeScene.getRenderer
+            const renderer = runtimeScene.getGame().getRenderer(); //this should get the renderer of gd
+            console.log(renderer)
             console.log('webxr session started:', session);
             renderer.xr.enabled = true;
             renderer.xr.setCamera(xrCamera);
