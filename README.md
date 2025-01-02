@@ -9,3 +9,7 @@ I use VS Code for coding but i don't think it really matters, you just need to o
 ![Screenshot 2025-01-02 121542](https://github.com/user-attachments/assets/dc4ea561-be99-44c1-8c1f-b26085735905)
 
 You may have also noticed that the extension file is missing (from this repository)
+
+![Screenshot 2025-01-02 122306](https://github.com/user-attachments/assets/477631a2-f728-4ae0-8845-9c04a48d5ebc)
+
+That's because the only thing the extension really has is loading files from this repository. I tried using ```eval();``` but it just didn't work for whatever reason so yeah..
