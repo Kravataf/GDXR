@@ -1,5 +1,3 @@
-// loadTHREEJS('https://cdn.jsdelivr.net/npm/three@0.77.1/build/three.min.js', function() {});
-// import { VRButton } from 'three/addons/webxr/VRButton.js';
 async function startXRSession() {
     if (navigator.xr) {
         try {
@@ -13,7 +11,7 @@ async function startXRSession() {
 
                 renderer.render( scene, camera );
             
-            } ); //we need a diff anim loop for rendering in vr
+            } );
         } catch (err) {
             console.error('failed to start:', err);
         }
@@ -30,9 +28,7 @@ startButton.style.left = '10px';
 startButton.addEventListener('click', () => {
     startXRSession();
 });
-document.body.appendChild(startButton); //shit button because i didnt manage to import the VRbutton thingy yet
-
-// document.body.appendChild( VRButton.createButton( renderer ) ); //button from the docs https://threejs.org/docs/#manual/en/introduction/How-to-create-VR-content
+document.body.appendChild(startButton); //user input is required to start vr mode
 
 //webxr doesnt work bc of insecure connection or whatever
 if (!location.protocol.includes('https')) {
