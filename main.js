@@ -1,8 +1,10 @@
+// runtimeScene not defined.. not sure what to do. this might just be an issue w the fact
+// that im using WebXR API Emulator chrome extension thingy since i dont have my headset 
+// w me but yeah :I
 async function startXRSession() {
     if (navigator.xr) {
         try {
             const session = await navigator.xr.requestSession('immersive-vr');
-            const runtimeScene = runtimeScene //for whatever reason its throwing error that runtimeScene not defined?
             const renderer = runtimeScene.getGame().getRenderer(); //this should get the renderer of gd
             console.log(renderer)
             console.log('webxr session started:', session);
