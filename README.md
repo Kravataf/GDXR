@@ -1,3 +1,5 @@
+I should be able to launch in vr but it just crashes afterwards since I was too lazy to finish this project :U
+
 # GDXR
 V2 of me trying to make extension that adds VR support for gdevelop using the webXR api
 
